@@ -17,4 +17,5 @@
     become_user: root
 
   - name: Deploy the Image and Run as Container
-    command: docker run -itd -p 8084:8081 cbabu85/insure-me-app:4.0
+    command: docker run -itd -p 9090:8081 chan1903/insureme:4.0
+

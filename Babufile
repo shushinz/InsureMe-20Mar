@@ -44,14 +44,14 @@ pipeline {
         stage('Login to Dockerhub') {
             steps {  
                 withCredentials([usernamePassword(credentialsId: 'dockerlogin', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
-                    sh "docker login -u ${dockeruser} -p ${dockerpass}"
+                    sh "docker login -u ${env.dockeruser} -p ${env.dockerpass}"
                 }
             }
         }
         
         stage('Push the Docker image') {
             steps {
-                sh 'docker push cbabu85/insure-me-app:4.0'
+                sh 'docker push chan1903/insureme:4.0'
             }
         }
         
